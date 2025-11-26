@@ -79,7 +79,7 @@ int start_parsing(t_game *g);
 //colors parsing
 int     parse_ceiling_color(t_game *g, char **file);
 int     parse_floor_color(t_game *g, char **file);
-int     parse_color_id_in_file(t_rgb *dst, char **file, char id);
+int	    parse_color_id_in_file(t_rgb *dst, char **file, char id, int map_start_y);
 //_______________________________
 
 //textures parsing

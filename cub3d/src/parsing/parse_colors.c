@@ -4,7 +4,7 @@ int	parse_floor_color(t_game *g, char **file)
 {
 	int	ret;
 
-	ret = parse_color_id_in_file(&g->colors.floor_rgb, file, 'F');
+	ret = parse_color_id_in_file(&g->colors.floor_rgb, file, 'F', g->map.map_start_y);
 	if (ret == 1)
 		return (1);
 	if (ret == -1)
@@ -18,7 +18,7 @@ int	parse_ceiling_color(t_game *g, char **file)
 {
 	int	ret;
 
-	ret = parse_color_id_in_file(&g->colors.ceil_rgb, file, 'C');
+	ret = parse_color_id_in_file(&g->colors.ceil_rgb, file, 'C', g->map.map_start_y);
 	if (ret == 1)
 		return (1);
 	if (ret == -1)

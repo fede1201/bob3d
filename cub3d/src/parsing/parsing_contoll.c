@@ -2,14 +2,15 @@
 
 int start_parsing(t_game *g)
 {
+    g->map.map_start_y = 0;
+    if( !trim_map(g))
+       return (0);
     if (!parse_floor_color(g, g->file))
         return (0);
     if (!parse_ceiling_color(g, g->file))
         return (0);
     if (!texture_start(g, g->file))
         return (0);
-    if( !trim_map(g))
-       return (0);
     if(!init_player(g))
         return (0);
     if(!fill_check_start(g))

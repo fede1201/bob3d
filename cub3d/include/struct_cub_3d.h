@@ -32,6 +32,7 @@ typedef struct s_colors
 
 typedef struct s_map
 {
+    int  map_start_y;
     char **grid;
     char **grid_copy;
     int width;

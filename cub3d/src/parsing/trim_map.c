@@ -45,6 +45,7 @@ int trim_map(t_game *g)
     start = 0;
     while (g->file[start] && !ft_is_map_line(&g->file[start][0]))
         start++;
+    g->map.map_start_y = start;
     end = start;
     while (g->file[end] && ft_is_map_line(&g->file[end][0]))
         end++;

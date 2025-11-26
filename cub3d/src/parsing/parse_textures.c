@@ -54,7 +54,7 @@ int    texture_start(t_game *g, char **file)
 
     if(!check_ientifier_duplicate(file))
         return (0);
-    while (file[i])
+    while (file[i] && i < g->map.map_start_y)
     {
         texture_extract(g, file[i], "NO");
         texture_extract(g, file[i], "SO");

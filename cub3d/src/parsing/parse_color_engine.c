@@ -65,14 +65,15 @@ static int	save_color_generic(t_rgb *dst, const char *line, char id)
 	dst->b = b;
 	return (1);
 }
-int	parse_color_id_in_file(t_rgb *dst, char **file, char id)
+int	parse_color_id_in_file(t_rgb *dst, char **file, char id, int map_start_y)
 {
 	int		x;
 	int		found;
 
 	x = 0;
 	found = 0;
-	while (file && file[x])
+	printf("Map start %d", map_start_y);
+	while (file && file[x] && x < map_start_y)
 	{
 		if (save_color_generic(dst, file[x], id))
 		{
